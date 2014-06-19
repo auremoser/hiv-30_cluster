@@ -32,8 +32,8 @@ Weights/Sizes of nodes are not adjusted in this case, but the idea is that the c
 
 ![Color Palette](https://raw.githubusercontent.com/auremoser/hiv-30_cluster/master/assets/color_palette.jpg)
 
-Here is a HIV cluster (of years?):
-![HIV Cluster](https://raw.githubusercontent.com/auremoser/hiv-30_cluster/master/assets/viral-cluster.jpg)
+Here is a HIV cluster (of years?):  
+![HIV Cluster](https://raw.githubusercontent.com/auremoser/hiv-30_cluster/master/assets/virus-cluster.jpg)
 
 Here's a diagram of the virus:
 ![Virus Diagram](https://raw.githubusercontent.com/auremoser/hiv-30_cluster/master/assets/diagram-virus.jpg)
