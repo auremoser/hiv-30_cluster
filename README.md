@@ -1,10 +1,9 @@
 ##HIV-30 Cluster Visualization
 
-
 prototype for internews' hiv@30 sentiment analysis visualization
 
 ###Proposal
-We're trying to visualize the major entities involved in the conversation around HIV over the past 30 years in Kenya, based on text analysis of the Daily Nation AIDS coverage since the early 1980s. 
+We're trying to visualize the major entities involved in the conversation around HIV over the past 30 years in Kenya, based on text analysis of the Daily Nation AIDS coverage since the early 1980s.
 
 To do this, we're assembling graphs of the major entities, and hopefully visualizing them in a way that is easily digestible, and meaninful, perhaps such that the node-edge map looks like a series of viruses that multiple as the conversation grows.
 
@@ -32,7 +31,7 @@ Weights/Sizes of nodes are not adjusted in this case, but the idea is that the c
 
 ![Color Palette](https://raw.githubusercontent.com/auremoser/hiv-30_cluster/master/assets/color_palette.jpg)
 
-Here is a HIV cluster (of years?):  
+Here is a HIV cluster (of years?):
 ![HIV Cluster](https://raw.githubusercontent.com/auremoser/hiv-30_cluster/master/assets/virus-cluster.jpg)
 
 Here's a diagram of the virus:
