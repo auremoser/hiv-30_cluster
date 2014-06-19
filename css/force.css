@@ -1,0 +1,13 @@
+.node {
+ 	cursor: pointer;
+ 	stroke: #774499;
+ 	stroke-width: 1.5px;
+}
+.link {
+  fill: none;
+  stroke: #7722cc;
+  stroke-width: 1.5px;
+}
+#force div {
+	float:left;
+}
