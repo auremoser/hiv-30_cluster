@@ -10,6 +10,8 @@ To do this, we're assembling graphs of the major entities, and hopefully visuali
 
 ![virus image](https://raw.githubusercontent.com/auremoser/hiv-30_cluster/master/assets/virus.jpg)
 
+See [here for more](http://forcollegeandcommunity.files.wordpress.com/2012/08/hiv-virus.jpg) images.
+
 ###Data
 Data comes from the processed Daily Nation articles from the past 30 years as assembled by the Internews-KE Team.
 
@@ -27,6 +29,8 @@ Here is a larger one:
 ![Large Node-Edge](https://raw.githubusercontent.com/auremoser/hiv-30_cluster/master/assets/large-graph.jpg)
 
 Weights/Sizes of nodes are not adjusted in this case, but the idea is that the central node would be large, with appendage entities reflecting the glycoprotein receptors/docks, and agglutinating as the conversation grows.
+
+![Color Palette](https://raw.githubusercontent.com/auremoser/hiv-30_cluster/master/assets/color_palette.jpg)
 
 Here is a HIV cluster (of years?):
 ![HIV Cluster](https://raw.githubusercontent.com/auremoser/hiv-30_cluster/master/assets/viral-cluster.jpg)
