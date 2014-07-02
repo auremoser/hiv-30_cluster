@@ -37,13 +37,14 @@ Here is an HIV cluster (of years?):
 ![HIV Cluster](https://raw.githubusercontent.com/auremoser/hiv-30_cluster/master/assets/virus-cluster.jpg)
 
 Here's a diagram of the virus:
-![Virus Diagram](https://raw.githubusercontent.com/auremoser/hiv-30_cluster/master/assets/diagram-virus.jpg)
+![Virus Diagram](https://raw.githubusercontent.com/auremoser/hiv-30_cluster/master/assets/diagram-virus.png)
 
 ####Zoomable Circle-Pack
 Here is a demo example (1980s):
-![Circle-Pack](https://raw.githubusercontent.com/auremoser/hiv-30_cluster/master/assets/1980s-pack.jpg)
+![Circle-Pack](https://raw.githubusercontent.com/auremoser/hiv-30_cluster/master/assets/1980s-pack.png)
 
-![Color Palette](https://raw.githubusercontent.com/auremoser/hiv-30_cluster/master/assets/color_palette-2.jpg)
+![Color Palette](https://raw.githubusercontent.com/auremoser/hiv-30_cluster/master/assets/color_palette-2.png)
+![HIV Single Orange](https://raw.githubusercontent.com/auremoser/hiv-30_cluster/master/assets/virus-orange.png)
 
-Here is an HIV virus sample:
-![HIV Cluster Orange](https://raw.githubusercontent.com/auremoser/hiv-30_cluster/master/assets/virus-orange.jpg)
+![HIV Cluster Orange](https://raw.githubusercontent.com/auremoser/hiv-30_cluster/master/assets/virus-cluster-orange.png)
+
