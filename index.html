@@ -21,26 +21,29 @@
             margin: 0;
             font-family: "Helvetica Neue", Helvetica;
         	}
-/*color palette: #d53e4f, #fc8d59, #fee08b, #e6f598, #99d594, #3288bd*/
+/*color palette (light>dark): #ffffb2, #fed976, #feb24c, #fd8d3c, #fc4e2a, #e31a1c, #b10026*/
         	text {
         	    font-size: 11px;
         	    pointer-events: none;
         	}
         	text.parent {
-        	    fill: #d53e4f;
+        	    fill: #b10026;
+        	}
+        	text.child {
+        		fill: #e31a1c;
         	}
         	circle {
-        	    fill: #fc8d59;
-        	    stroke: #fee08b;
+        	    fill: #fd8d3c;
+        	    stroke: #fc4e2a;
         	    pointer-events: all;
         	}
         	circle.parent {
-        	    fill: #e6f598;
+        	    fill: #fed976;
         	    fill-opacity: .1;
-        	    stroke: #99d594;
+        	    stroke: #feb24c;
         	}
         	circle.parent:hover {
-        	    stroke: #3288bd;
+        	    stroke: #ffffb2;
         	    stroke-width: .5px;
         	}
         	circle.child {
