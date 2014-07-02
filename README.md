@@ -45,5 +45,4 @@ Here is a demo example (1980s):
 
 ![Color Palette](https://raw.githubusercontent.com/auremoser/hiv-30_cluster/master/assets/color_palette-2.png)
 
-![HIV Cluster Orange](https://raw.githubusercontent.com/auremoser/hiv-30_cluster/master/assets/virus-cluster-orange.png)
-
+![HIV Cluster Orange](https://raw.githubusercontent.com/auremoser/hiv-30_cluster/master/assets/virus-banner
