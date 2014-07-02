@@ -1,5 +1,5 @@
-var width = 660,
-    height = 500,
+var width = 960,
+    height = 700,
     root;
 
 var force = d3.layout.force()

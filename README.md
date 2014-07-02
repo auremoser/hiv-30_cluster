@@ -4,7 +4,7 @@
 prototype for internews' hiv@30 sentiment analysis visualization
 
 ###Proposal
-We're trying to visualize the major entities involved in the conversation around HIV over the past 30 years in Kenya, based on text analysis of the Daily Nation AIDS coverage since the early 1980s. 
+We're trying to visualize the major entities involved in the conversation around HIV over the past 30 years in Kenya, based on text analysis of the Daily Nation AIDS coverage since the early 1980s.
 
 To do this, we're assembling graphs of the major entities, and hopefully visualizing them in a way that is easily digestible, and meaninful, perhaps such that the node-edge map looks like a series of viruses that multiple as the conversation grows.
 
@@ -20,8 +20,9 @@ Docx files were extracted from PDFs and scans, analyzed in Overview and then ren
 Each central node will expand out from the year to subnodes (people, places, institutions). The hierarchy will be AIDS > parent nodes (years) > children nodes(people, places, institutions).
 
 ###Demo/Test
-Prototypes required a mapping of the exported chambua objects to a json array that would work with D3. Some initial tests with fake data attempted the node-edge collapsable layout that we hope to use for ultimate views of the entites related to HIV by year, and eventually decade buckets.
+Prototypes required a mapping of the exported chambua objects to a json array that would work with D3. Some initial tests with fake data attempted the node-edge collapsable layout that we hope to use for ultimate views of the entites related to HIV by year, and eventually decade buckets. Two tracks of viz type were attempted: collapsable node-edge, and zoomable circle-pack.
 
+####Collapsable Node-Edge
 Here is a small map example:
 ![Small Node-Edge](https://raw.githubusercontent.com/auremoser/hiv-30_cluster/master/assets/small-graph.jpg)
 
@@ -32,8 +33,17 @@ Weights/Sizes of nodes are not adjusted in this case, but the idea is that the c
 
 ![Color Palette](https://raw.githubusercontent.com/auremoser/hiv-30_cluster/master/assets/color_palette.jpg)
 
-Here is a HIV cluster (of years?):  
+Here is an HIV cluster (of years?):
 ![HIV Cluster](https://raw.githubusercontent.com/auremoser/hiv-30_cluster/master/assets/virus-cluster.jpg)
 
 Here's a diagram of the virus:
 ![Virus Diagram](https://raw.githubusercontent.com/auremoser/hiv-30_cluster/master/assets/diagram-virus.jpg)
+
+####Zoomable Circle-Pack
+Here is a demo example (1980s):
+![Circle-Pack](https://raw.githubusercontent.com/auremoser/hiv-30_cluster/master/assets/1980s-pack.jpg)
+
+![Color Palette](https://raw.githubusercontent.com/auremoser/hiv-30_cluster/master/assets/color_palette-2.jpg)
+
+Here is an HIV virus sample:
+![HIV Cluster Orange](https://raw.githubusercontent.com/auremoser/hiv-30_cluster/master/assets/virus-orange.jpg)
