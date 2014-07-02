@@ -10,19 +10,51 @@
 		<link rel="shortcut icon" href="https://raw.githubusercontent.com/internews-ke/hiv-30/master/Timeline/assets/internews-favicon.ico" >
 		<script type="text/javascript" src="libs/d3.v3.min.js"></script>
 
-		<style>
+		<style type="text/css">
 			h1,h2,h4,h6,li,a {
-				font-family: "Proxima Nova",Helvetica,Ariel,sans-serif	!important;
+				font-family: "Helvetica Neue",Ariel,sans-serif	!important;
 			}
+			html, body {
+            /*overflow: hidden;*/
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            font-family: "Helvetica Neue", Helvetica;
+        	}
+/*color palette: #d53e4f, #fc8d59, #fee08b, #e6f598, #99d594, #3288bd*/
+        	text {
+        	    font-size: 11px;
+        	    pointer-events: none;
+        	}
+        	text.parent {
+        	    fill: #d53e4f;
+        	}
+        	circle {
+        	    fill: #fc8d59;
+        	    stroke: #fee08b;
+        	    pointer-events: all;
+        	}
+        	circle.parent {
+        	    fill: #e6f598;
+        	    fill-opacity: .1;
+        	    stroke: #99d594;
+        	}
+        	circle.parent:hover {
+        	    stroke: #3288bd;
+        	    stroke-width: .5px;
+        	}
+        	circle.child {
+        	    pointer-events: none;
+        	}
 		</style>
 	</head>
 	<body>
-		<div id='force'>
+		<!-- <div id='force'>
 			<link rel="stylesheet" href="css/force.css">
 			<script type='text/javascript' src='js/force.js'></script>
-		</div>
+		</div> -->
 		<div id='pack'>
-			<link rel="stylesheet" href="css/pack.css">
+			<link type="text/css" rel="stylesheet" href="css/pack.css">
 			<script type='text/javascript' src='js/pack.js'></script>
 		</div>
 	</body>

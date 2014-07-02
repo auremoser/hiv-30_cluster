@@ -1,0 +1,31 @@
+{
+    "name": "Area",
+    "children": [{
+        "name": "group3",
+        "children": [{
+            "name": "group0",
+            "children": [{
+                "name": "California",
+                "place_type": "Adm",
+                "size": 3938 //
+            }, {
+                "name": "San Francisco",
+                "place_type": "GisFeature",
+                "size": 3534//
+            }, {
+                "name": "WASHINGTON",
+                "place_type": "Adm",
+                "size": 3534
+            }, {
+                "name": "Uganda",
+                "place_type": "Country",
+                "size": 3534
+            }, {
+                "name": "Central Africa",
+                "place_type": "GisFeature",
+                "size": 3534
+            }]
+
+        }]
+    }]
+}
