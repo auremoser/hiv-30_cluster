@@ -32,6 +32,7 @@ Here is a larger one:
 Weights/Sizes of nodes are not adjusted in this case, but the idea is that the central node would be large, with appendage entities reflecting the glycoprotein receptors/docks, and agglutinating as the conversation grows.
 
 ![Color Palette](https://raw.githubusercontent.com/auremoser/hiv-30_cluster/master/assets/color_palette.jpg)
+![Color Palette](https://raw.githubusercontent.com/auremoser/hiv-30_cluster/master/assets/color_palette-2.png)
 
 Here is an HIV cluster (of years?):
 ![HIV Cluster](https://raw.githubusercontent.com/auremoser/hiv-30_cluster/master/assets/virus-cluster.jpg)
@@ -43,6 +44,4 @@ Here's a diagram of the virus:
 Here is a demo example (1980s):
 ![Circle-Pack](https://raw.githubusercontent.com/auremoser/hiv-30_cluster/master/assets/1980s-pack.png)
 
-![Color Palette](https://raw.githubusercontent.com/auremoser/hiv-30_cluster/master/assets/color_palette-2.png)
-
-![HIV Cluster Orange](https://raw.githubusercontent.com/auremoser/hiv-30_cluster/master/assets/virus-banner.png)
+![HIV Cluster Orange](https://raw.githubusercontent.com/auremoser/hiv-30_cluster/master/assets/virus-cluster-orange.png)
