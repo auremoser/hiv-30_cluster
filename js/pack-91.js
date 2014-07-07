@@ -47,7 +47,7 @@ var vis = d3.select("body").insert("svg:svg", "h2")
     .append("svg:g")
     .attr("transform", "translate(" + (w - r) / 2 + "," + (h - r) / 2 + ")");
 
-d3.json("data/tree_structure-1991.json", function(data) {
+d3.json("data/hiv-1992.json", function(data) {
 // d3.json("data/test.json", function(data) {
     node = root = data;
 
