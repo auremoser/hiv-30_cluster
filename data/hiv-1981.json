@@ -1,4 +1,5 @@
-{
+{"name": "hiv",
+"children": [{
   "name": "1981",
   "children": [
     {
@@ -36,7 +37,7 @@
           "name": "organizations",
           "children": [
             {
-              "name": "KaposiÔøΩsÔøΩ Sarcoma"
+              "name": "Kaposi's Sarcoma"
             }
           ]
         }
@@ -44,3 +45,4 @@
     }
   ]
 }
+]}
