@@ -2,10 +2,14 @@
 //   'use strict'
 var w = 256,
     h = 256,
+    r = Math.min(w, h) * .5,
+    x = d3.scale.linear().range([0, w]),
+    y = d3.scale.linear().range([0, h]),
     node,
     root;
 
 var years = [1981,1983,1985,1986,1987,1988,1989,1990,1991,1992,1993,1994,1995,1996,1997,1998,1999,2000,2001,2002,2003,2004,2005,2006,2009,2010,2011,2012,2013];
+// years = years.slice(0, 5)
 
 var clusters = ['people', 'places', 'organizations']
 
@@ -27,15 +31,12 @@ d3.select('body')
         .attr("width", w)
         .attr("height", h)
         .each(function(d) {
-            console.log(d)
             d3.json("data/hiv-" + d + ".json", renderChart)
         })
 
-function renderChart (data) {
+function renderChart(data) {
     var year = data.children[0].name
-// d3.json("data/test.json", function(data) {
-    console.log(data)
-    console.log(year)
+
     var vis = d3.select("#chart-" + year)
     .append("g")
 
@@ -97,7 +98,7 @@ function renderChart (data) {
         .text(labelNode)
 
     d3.select(window).on("click", function() {
-        zoom(root);
+        zoom(vis, root);
     });
 }
 
@@ -127,6 +128,8 @@ function zoom(d, i) {
     var k = r / d.r / 2;
     x.domain([d.x - d.r, d.x + d.r]);
     y.domain([d.y - d.r, d.y + d.r]);
+
+    vis = d3.select(this)
 
     var t = vis.transition()
         .duration(d3.event.altKey ? 7500 : 750);
