@@ -1,0 +1,81 @@
+<!-- HIV@30 Graph project
+* Internews-KE
+* @auremoser
+ -->
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>HIV@30 Entity Graph</title>
+		<meta charset="utf-8">
+		<link rel="shortcut icon" href="https://raw.githubusercontent.com/internews-ke/hiv-30/master/Timeline/assets/internews-favicon.ico" >
+		<script type="text/javascript" src="libs/d3.v3.min.js"></script>
+
+		<style type="text/css">
+			h1,h2,h4,h6,li,a {
+				font-family: "Helvetica Neue",Ariel,sans-serif	!important;
+			}
+			html, body {
+            /*overflow: hidden;*/
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            font-family: "Helvetica Neue", Helvetica;
+        	}
+/*color palette (light>dark): #ffffb2, #fed976, #feb24c, #fd8d3c, #fc4e2a, #e31a1c, #b10026*/
+        	text {
+        	    font-size: 12px;
+        	    pointer-events: none;
+        	}
+        	text.parent {
+                fill: #b10026;
+                fill: #000;
+            }
+            text.child {
+                fill: #e31a1c;
+        	    fill: #000;
+        	}
+        	circle {
+        	    fill: #ccc;
+        	    pointer-events: all;
+        	}
+
+        	circle.parent:hover {
+        	    stroke: #000;
+        	    stroke-width: .5px;
+        	}
+
+        	circle.child {
+        	    pointer-events: none;
+                fill-opacity: 0;
+                stroke: #ddd;
+        	}
+
+            circle.document {
+                fill: #c4c4c4;
+            }
+
+            circle.people {
+                fill: #cd0032;
+            }
+
+            circle.places {
+                fill: #127828;
+            }
+
+            circle.organizations {
+                fill: #ffa300;
+            }
+
+		</style>
+	</head>
+	<body>
+		<!-- <div id='force'>
+			<link rel="stylesheet" href="css/force.css">
+			<script type='text/javascript' src='js/force.js'></script>
+		</div> -->
+		<div id='pack'>
+			<link type="text/css" rel="stylesheet" href="css/pack-small.css">
+			<script type='text/javascript' src='js/pack.js'></script>
+		</div>
+	</body>
+</html>
