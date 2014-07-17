@@ -1,13 +1,11 @@
 // (function() {
 //   'use strict'
-var w = 128,
-    h = 128,
-    r = Math.min(w, h) * .5,
-    x = d3.scale.linear().range([0, w]),
-    y = d3.scale.linear().range([0, h]);
+var w = 256,
+    h = 256,
+    node,
+    root;
 
 var years = [1981,1983,1985,1986,1987,1988,1989,1990,1991,1992,1993,1994,1995,1996,1997,1998,1999,2000,2001,2002,2003,2004,2005,2006,2009,2010,2011,2012,2013];
-// years = years.slice(0, 6)
 
 var clusters = ['people', 'places', 'organizations']
 
@@ -29,14 +27,15 @@ d3.select('body')
         .attr("width", w)
         .attr("height", h)
         .each(function(d) {
+            console.log(d)
             d3.json("data/hiv-" + d + ".json", renderChart)
         })
 
-function renderChart(data) {
-    var node, root;
-
+function renderChart (data) {
     var year = data.children[0].name
-
+// d3.json("data/test.json", function(data) {
+    console.log(data)
+    console.log(year)
     var vis = d3.select("#chart-" + year)
     .append("g")
 
@@ -78,39 +77,27 @@ function renderChart(data) {
             return zoom(node == d ? root : d);
         });
 
-    vis.append("text")
-        .text(data.children[0].name)
-        .attr('dy', '1em')
-        .style('stroke', '#fff')
-        .style('stroke-width', 1.5)
-        .style('stroke-opacity', 0.7)
-        .style('fill', '#000')
-        .style('fill-opacity', 0.3)
-        .style('font-size', '55px')
-        .style('font-weight', 'bold')
-
-
-    // vis.selectAll("text")
-    //     .data(nodes)
-    //     .enter().append("svg:text")
-    //     .attr("class", function(d) {
-    //         return d.children ? "parent" : "child";
-    //     })
-    //     .attr("x", function(d) {
-    //         return d.x;
-    //     })
-    //     .attr("y", function(d) {
-    //         return d.y;
-    //     })
-    //     .attr("dy", ".35em")
-    //     .attr("text-anchor", "middle")
-    //     .style("opacity", function(d) {
-    //         return d.r > 20 ? 1 : 0;
-    //     })
-    //     .text(labelNode)
+    vis.selectAll("text")
+        .data(nodes)
+        .enter().append("svg:text")
+        .attr("class", function(d) {
+            return d.children ? "parent" : "child";
+        })
+        .attr("x", function(d) {
+            return d.x;
+        })
+        .attr("y", function(d) {
+            return d.y;
+        })
+        .attr("dy", ".35em")
+        .attr("text-anchor", "middle")
+        .style("opacity", function(d) {
+            return d.r > 20 ? 1 : 0;
+        })
+        .text(labelNode)
 
     d3.select(window).on("click", function() {
-        zoom(vis, root);
+        zoom(root);
     });
 }
 
@@ -141,7 +128,7 @@ function zoom(d, i) {
     x.domain([d.x - d.r, d.x + d.r]);
     y.domain([d.y - d.r, d.y + d.r]);
 
-    var t = d.transition()
+    var t = vis.transition()
         .duration(d3.event.altKey ? 7500 : 750);
 
     t.selectAll("circle")
@@ -169,12 +156,12 @@ function zoom(d, i) {
         .each(function(d, i) {
             updateCounter++;
         })
-        // .each("end", function(d, i) {
-        //     updateCounter--;
-        //     if (updateCounter == 0) {
-        //         adjustLabels(k);
-        //     }
-        // });
+        .each("end", function(d, i) {
+            updateCounter--;
+            if (updateCounter == 0) {
+                adjustLabels(k);
+            }
+        });
 
     node = d;
     d3.event.stopPropagation();
