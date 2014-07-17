@@ -1,17 +1,16 @@
 // (function() {
 //   'use strict'
-var w = 650,
-    h = 565,
-    r = 500,
-    x = d3.scale.linear().range([0, r]),
-    y = d3.scale.linear().range([0, r]),
+var w = 256,
+    h = 256,
     node,
     root;
+
+var years = [1981,1983,1985,1986,1987,1988,1989,1990,1991,1992,1993,1994,1995,1996,1997,1998,1999,2000,2001,2002,2003,2004,2005,2006,2009,2010,2011,2012,2013];
 
 var clusters = ['people', 'places', 'organizations']
 
 var pack = d3.layout.pack()
-    .size([r, r])
+    .size([w, h])
     .padding(1)
     .value(function(d) {
         return d.children ? d.children.length : 1
@@ -19,36 +18,27 @@ var pack = d3.layout.pack()
         return d.size;
     });
 
-function objectFindByKey(array, key, value) {
-    for (var i = 0; i < array.length; i++) {
-        if (array[i][key] === value) {
-            return array[i];
-        }
-    }
-    return null;
-}
+d3.select('body')
+    .selectAll('svg')
+    .data(years)
+    .enter()
+        .append('svg')
+        .attr('id', function(d, i) { return 'chart-' + d })
+        .attr("width", w)
+        .attr("height", h)
+        .each(function(d) {
+            console.log(d)
+            d3.json("data/hiv-" + d + ".json", renderChart)
+        })
 
-// var SELECT_NODE_BY = 'places'; //you can use places|people|organizations
-pack.children(function(d) {
-    if (!d.children) {
-        // console.warn(d);
-        return d
-    }
-    // if (d.children.length === 3 && d.name.indexOf('txt') !== -1) {
-    //     var c = objectFindByKey(d.children, 'name', SELECT_NODE_BY);
-    //     return c.children;
-    // }
-    return d.children;
-});
-
-var vis = d3.select("body").insert("svg:svg", "h2")
-    .attr("width", w)
-    .attr("height", h)
-    .append("svg:g")
-    .attr("transform", "translate(" + (w - r) / 2 + "," + (h - r) / 2 + ")");
-
-d3.json("data/hiv-1981.json", function(data) {
+function renderChart (data) {
+    var year = data.children[0].name
 // d3.json("data/test.json", function(data) {
+    console.log(data)
+    console.log(year)
+    var vis = d3.select("#chart-" + year)
+    .append("g")
+
     node = root = data;
 
     var nodes = pack.nodes(root);
@@ -109,7 +99,7 @@ d3.json("data/hiv-1981.json", function(data) {
     d3.select(window).on("click", function() {
         zoom(root);
     });
-});
+}
 
 function labelNode(d) {
     // console.log(d)
@@ -209,4 +199,6 @@ function adjustLabels(k) {
             }
         });
 }
+//TODO
+// fix ln 149 error in console
 // });

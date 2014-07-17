@@ -1,9 +1,7 @@
 /*color palette: #d53e4f, #fc8d59, #fee08b, #e6f598, #99d594, #3288bd*/
 body {
   font: 300 36px "Helvetica Neue";
-  height: 640px;
-  margin: 80px 160px 80px 160px;
-  overflow: hidden;
+  margin: 20px;
   position: relative;
   width: 940px;
 }
@@ -94,8 +92,7 @@ h3 {
   color: #1181B8;
 }
 
-body > svg {
-  position: absolute;
-  top: -80px;
-  left: -160px;
+svg {
+  display: inline-block;
+  margin: 10px;
 }
