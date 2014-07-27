@@ -58,12 +58,15 @@ function renderChart(data) {
             return tmp
         })
         .attr("cx", function(d) {
+            if(!d) { console.error('renderChart wacky d'); return 0;}
             return d.x;
         })
         .attr("cy", function(d) {
+            if(!d) { console.error('renderChart wacky d'); return 0;}
             return d.y;
         })
         .attr("r", function(d) {
+            if(!d) { console.error('renderChart wacky d'); return 0;}
             return d.r;
         })
         // .style("fill", function(d, i) {
@@ -137,6 +140,7 @@ function fileNameToDate(f){
 
 
 function zoom(d, i) {
+    if(!d) return console.error('ZOOM wacky d');
     var k = r / d.r / 2;
     x.domain([d.x - d.r, d.x + d.r]);
     y.domain([d.y - d.r, d.y + d.r]);
