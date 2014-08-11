@@ -6,9 +6,6 @@
         x = d3.scale.linear().range([0, w]),
         y = d3.scale.linear().range([0, h]);
 
-    // var years = [1981,1983,1985,1986,1987,1988,1989,1990,1991,1992,1993,1994,1995,1996,1997,1998,1999,2000,2001,2002,2003,2004,2005,2006,2009,2010,2011,2012,2013];
-    // years = years.slice(10, 16)
-
     var yearsPacked = []
 
     var clusters = ['people', 'places', 'organizations']
@@ -34,18 +31,10 @@
             background: '#00c'
         })
 
-    var drawProgress = body.append('div')
-        .attr('id', 'draw-progress')
-        .style({
-            width: '0px',
-            height: '10px',
-            background: '#0c0'
-        })
-
     var xhr = d3.json(url)
-        .on("progress", function() { 
+        .on("progress", function() {
             var pct = d3.event.loaded / d3.event.totalSize
-            console.log("progress", d3.event, pct); 
+            console.log("progress", d3.event, pct);
             loadProgress.style('width', progressBarScale(pct) + 'px')
         })
         .on("load", function(data) {
@@ -68,10 +57,7 @@
                 .attr('id', function(d, i) { return 'chart-' + d.name })
                 .attr("width", w)
                 .attr("height", h)
-                .each(function(d, i) {
-                    renderChart(d)
-                    drawProgress.style('width', progressBarScale(i/yearsLen) + 'px')
-                })
+                .each(renderChart)
     }
 
     function renderChart(data) {
@@ -130,26 +116,6 @@
             .style('fill-opacity', 0.3)
             .style('font-size', '55px')
             .style('font-weight', 'bold')
-
-
-        // vis.selectAll("text")
-        //     .data(nodes)
-        //     .enter().append("svg:text")
-        //     .attr("class", function(d) {
-        //         return d.children ? "parent" : "child";
-        //     })
-        //     .attr("x", function(d) {
-        //         return d.x;
-        //     })
-        //     .attr("y", function(d) {
-        //         return d.y;
-        //     })
-        //     .attr("dy", ".35em")
-        //     .attr("text-anchor", "middle")
-        //     .style("opacity", function(d) {
-        //         return d.r > 20 ? 1 : 0;
-        //     })
-        //     .text(labelNode)
 
         d3.select(window).on("click", function() {
             zoom(vis, root);
