@@ -7,7 +7,7 @@
 	<head>
 		<title>HIV@30 Entity Graph</title>
 		<meta charset="utf-8">
-		<link rel="shortcut icon" href="https://raw.githubusercontent.com/internews-ke/hiv-30/master/Timeline/assets/internews-favicon.ico" >
+		<link rel="shortcut icon" href="favicon.ico" >
 		<script type="text/javascript" src="libs/d3.v3.min.js"></script>
 
 		<style type="text/css">
@@ -47,7 +47,7 @@
         	circle.child {
         	    pointer-events: none;
                 fill-opacity: 0;
-                stroke: #666;
+                stroke: none;
         	}
 
             circle.document {
@@ -55,15 +55,15 @@
             }
 
             circle.people {
-                fill: #c00;
+                fill: #cd0032;
             }
 
             circle.places {
-                fill: #0c0;
+                fill: #127828;
             }
 
             circle.organizations {
-                fill: #00c;
+                fill: #ffa300;
             }
 
 		</style>
@@ -74,8 +74,7 @@
 			<script type='text/javascript' src='js/force.js'></script>
 		</div> -->
 		<div id='pack'>
-			<link type="text/css" rel="stylesheet" href="css/pack.css">
-			<script type='text/javascript' src='js/pack.js'></script>
-		</div>
+        </div>
+		<script type='text/javascript' src='js/pack-small.js'></script>
 	</body>
 </html>

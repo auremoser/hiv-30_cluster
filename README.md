@@ -45,5 +45,3 @@ Here's a diagram of the virus:
 ####Zoomable Circle-Pack
 Here is a demo example (1980s):
 ![Circle-Pack](https://raw.githubusercontent.com/auremoser/hiv-30_cluster/master/assets/1980s-pack.png)
-
-![HIV Cluster Orange](https://raw.githubusercontent.com/auremoser/hiv-30_cluster/master/assets/hiv-pink.png)
