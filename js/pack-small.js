@@ -8,10 +8,10 @@
 
     var node, root, vis;
 
-    var vis = d3.select("body").insert("svg:svg", "h2")
+    var vis = d3.select("body")
+        .append("svg")
         .attr("width", w)
         .attr("height", h)
-        .append("svg:g")
         .attr("transform", "translate(" + (w - r) / 2 + "," + (h - r) / 2 + ")");
 
         // w = 128,
@@ -61,11 +61,12 @@
         var yearsLen = years.length
 
         // d3.select('body')
-            // .selectAll('svg')
+            // vis.selectAll('svg')
             vis.selectAll('circle')
             .data(years)
             .enter()
-                .append('svg')
+                .append('g')
+                // .append('svg')
                 .attr('id', function(d, i) { return 'chart-' + d.name })
                 .attr("width", w)
                 .attr("height", h)
