@@ -1,10 +1,21 @@
 (function() {
   'use strict'
-    var w = 128,
-        h = 128,
+    var w = 1024,
+        h = 704,
         r = Math.min(w, h) * .5,
         x = d3.scale.linear().range([0, w]),
         y = d3.scale.linear().range([0, h]);
+
+    var node, root, vis;
+
+    var vis = d3.select("body").insert("svg:svg", "h2")
+        .attr("width", w)
+        .attr("height", h)
+        .append("svg:g")
+        .attr("transform", "translate(" + (w - r) / 2 + "," + (h - r) / 2 + ")");
+
+        // w = 128,
+        // h = 128;
 
     var yearsPacked = []
 
@@ -49,25 +60,27 @@
         // console.log('renderYears', years)
         var yearsLen = years.length
 
-        d3.select('body')
-            .selectAll('svg')
+        // d3.select('body')
+            // .selectAll('svg')
+            vis.selectAll('circle')
             .data(years)
             .enter()
                 .append('svg')
                 .attr('id', function(d, i) { return 'chart-' + d.name })
                 .attr("width", w)
                 .attr("height", h)
-                .each(renderChart)
+                .each(renderChart);
+
     }
 
     function renderChart(data) {
         // console.log('renderChart', data)
 
-        var node, root;
+        // var node, root;
 
         var year = data.name
 
-        var vis = d3.select("#chart-" + year)
+        var subvis = d3.select("#chart-" + year)
         .append("g")
 
         node = root = data;
@@ -76,7 +89,7 @@
 
         yearsPacked.push(nodes)
 
-        vis.selectAll("circle")
+        subvis.selectAll("circle")
             .data(nodes.filter(function(d) {
                 // console.log(d)
                 return d.depth < 3
@@ -103,10 +116,10 @@
                     return d.r;
                 })
                 .on("click", function(d) {
-                    return zoom(node == d ? root : d);
+                    return zoom(node === d ? root : d);
                 });
 
-        vis.append("text")
+        subvis.append("text")
             .text(data.name)
             .attr('dy', '1em')
             .style('stroke', '#fff')
@@ -118,7 +131,8 @@
             .style('font-weight', 'bold')
 
         d3.select(window).on("click", function() {
-            zoom(vis, root);
+            zoom(root);
+            // zoom(subvis, root);
         });
     }
 
@@ -145,12 +159,15 @@
 
 
     function zoom(d, i) {
-        if(!d) return console.error('ZOOM wacky d');
+        if(!d || typeof d.x === 'undefined') return console.error('ZOOM wacky d', d);
+
+        console.log('=> ZOOM', d.x, (r / d.r / 2))
+
         var k = r / d.r / 2;
         x.domain([d.x - d.r, d.x + d.r]);
         y.domain([d.y - d.r, d.y + d.r]);
 
-        var t = d.transition()
+        var t = vis.transition()
             .duration(d3.event.altKey ? 7500 : 750);
 
         t.selectAll("circle")
