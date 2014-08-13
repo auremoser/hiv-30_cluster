@@ -102,8 +102,12 @@
                 .attr("r", function(d) {
                     return d.r;
                 })
+// MORE ZOOM EDITS
+                .attr('data-year', year) // Set attribute on this circle so it knows what year of data
                 .on("click", function(d) {
-                    return zoom(node == d ? root : d);
+                // Select year on click and pass it to 'zoom' so that it knows the container to zoom.
+                    var year = d3.select(this).attr('data-year');
+                    zoom(node == d? root : d, year);
                 });
 
         vis.append("text")
@@ -117,11 +121,11 @@
             .style('font-size', '55px')
             .style('font-weight', 'bold')
 
-        d3.select(window).on("click", function() {
-            zoom(vis, root);
-        });
+        // d3.select(window).on("click", function() {
+        //     zoom(vis, root);
+        // });
     }
-
+// END ZOOM EDITS
     function labelNode(d) {
         // console.log(d)
         switch(d.depth) {
@@ -143,17 +147,18 @@
         return [d, m, y].join('-')
     };
 
-
-    function zoom(d, i) {
+// CHANGED ZOOM STUFF FROM OTHER BRANCHES
+    function zoom(d, year) {
         if(!d) return console.error('ZOOM wacky d');
         var k = r / d.r / 2;
         x.domain([d.x - d.r, d.x + d.r]);
         y.domain([d.y - d.r, d.y + d.r]);
-
-        var t = d.transition()
-            .duration(d3.event.altKey ? 7500 : 750);
-
-        t.selectAll("circle")
+        // Get year, make d3 selection on container
+        var container = d3.select('#chart-'+year)
+        // Transition all circle elements on container
+        container.selectAll("circle")
+            .transition()
+            .duration(d3.event.altKey ? 7500 : 750)
             .attr("cx", function(d) {
                 return x(d.x);
             })
@@ -167,7 +172,8 @@
         // updateCounter is a hacky way to determine when transition is finished
         var updateCounter = 0;
 
-        t.selectAll("text")
+        container.selectAll("text")
+// END CHANGE ZOOM
             .style("opacity", 0)
             .attr("x", function(d) {
                 return x(d.x);
