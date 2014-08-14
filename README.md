@@ -6,7 +6,7 @@ prototype for internews' hiv@30 sentiment analysis visualization
 ###Proposal
 We're trying to visualize the major entities involved in the conversation around HIV over the past 30 years in Kenya, based on text analysis of the Daily Nation AIDS coverage since the early 1980s.
 
-To do this, we're assembling graphs of the major entities, and hopefully visualizing them in a way that is easily digestible, and meaninful, perhaps such that the node-edge map looks like a series of viruses that multiple as the conversation grows.
+To do this, we're assembling graphs of the major entities, and hopefully visualizing them in a way that is easily digestible, and meaninful, perhaps such that the node-edge map looks like a series of viruses that multiply as the conversation grows.
 
 ![virus image](https://raw.githubusercontent.com/auremoser/hiv-30_cluster/master/assets/virus.jpg)
 

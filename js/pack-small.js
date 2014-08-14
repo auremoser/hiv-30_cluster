@@ -28,7 +28,7 @@
         .style({
             width: '0px',
             height: '10px',
-            background: '#00c'
+            background: '#fc4e2a'
         })
 
     var xhr = d3.json(url)
